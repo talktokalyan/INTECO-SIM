@@ -43,6 +43,27 @@ st.sidebar.latex(r"""
 \end{aligned}
 """)
 
+st.sidebar.markdown("---")
+with st.sidebar.expander("See Model Equations"):
+    st.latex(r"""
+    \begin{aligned}
+    & \textbf{Unknowns: } [Y, i, e] \\
+    \\
+    & \textbf{1. IS (Goods Market):} \\
+    & Y = C + I + G + NX \\
+    & \Rightarrow (1-c_1+m)Y + b i - x e \\
+    & \quad = C_0 - c_1T + I_0 + G + NX_0 \\
+    \\
+    & \textbf{2. LM (Money Market):} \\
+    & \frac{M}{P} = kY - h i \\
+    & \Rightarrow kY - h i = \frac{M}{P} \\
+    \\
+    & \textbf{3. BP (Balance of Payments):} \\
+    & NX + CF = 0 \\
+    & \Rightarrow -mY + \sigma i + x e = \sigma i^* - NX_0
+    \end{aligned}
+    """)
+
 # --- 3. MODEL SOLVER ---
 def solve_mundell_fleming(G, T, M, regime, sigma):
     # Parameters
