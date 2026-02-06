@@ -33,6 +33,7 @@ st.sidebar.header("3. Fixed Model Parameters")
 # Display parameters in a clean, mathematical format
 st.sidebar.latex(r"""
 \begin{aligned}
+\small
 & \text{Consumption (c)}_1 = 0.75 \\
 & \text{Inv. Sensitivity (b)} = 800 \\
 & \text{Import Propensity (m)} = 0.1 \\
