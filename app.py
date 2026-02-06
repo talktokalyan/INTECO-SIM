@@ -60,7 +60,7 @@ with st.sidebar.expander("See Model Equations"):
     \\
     & \textbf{3. BP (Balance of Payments):} \\
     & NX + CF = 0 \\
-    & \Rightarrow -mY + \sigma i + x e = \sigma i^* - NX_0
+    & \Rightarrow NX_0 -mY + \sigma (i-i^*) + x e = 0  
     \end{aligned}
     """)
 
