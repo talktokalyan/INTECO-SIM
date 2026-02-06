@@ -25,6 +25,23 @@ mobility = st.sidebar.select_slider("Capital Mobility", options=["Low", "High", 
 sigma_map = {"Low": 10, "High": 2000, "Perfect": 1000000}
 sigma = sigma_map[mobility]
 
+# ... (Previous sidebar code for inputs G, M, T, regime, mobility) ...
+
+st.sidebar.markdown("---") # Adds a visual separator
+st.sidebar.header("3. Fixed Model Parameters")
+
+# Display parameters in a clean, mathematical format
+st.sidebar.latex(r"""
+\begin{aligned}
+& \text{Consumption (c)}_1 = 0.75 \\
+& \text{Inv. Sensitivity (b)} = 800 \\
+& \text{Import Propensity (m)} = 0.1 \\
+& \text{NX Sensitivity (x)} = 400 \\
+& \text{Money Demand (k)} = 0.5 \\
+& \text{Money Sensitivity (h)} = 1200
+\end{aligned}
+""")
+
 # --- 3. MODEL SOLVER ---
 def solve_mundell_fleming(G, T, M, regime, sigma):
     # Parameters
