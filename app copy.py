@@ -85,9 +85,9 @@ def solve_mundell_fleming(G, T, M, regime, sigma):
         # 3. BP: NX + CF = 0         => -mY + sigma*i + xe = sigma*i_star - NX0
         
         A = np.array([
-            [1 - c1 + m,  b,  x],
+            [1 - c1 + m,  b,  -x],
             [k,          -h,   0],
-            [-m,      sigma,   -x]
+            [-m,      sigma,   x]
         ])
         B = np.array([
             C0 - c1*T + I0 + G + NX0,
