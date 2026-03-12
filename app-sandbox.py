@@ -68,11 +68,11 @@ with st.sidebar.expander("See Model Equations"):
 def solve_mundell_fleming(G, T, M, regime, sigma):
     # Parameters
     c1 = 0.75   # Marginal propensity to consume
-    b = 800     # Sensitivity of investment to interest
+    b = 80     # Sensitivity of investment to interest
     m = 0.1     # Marginal propensity to import
-    x = 400     # Sensitivity of NX to exchange rate
+    x = 40     # Sensitivity of NX to exchange rate
     k = 0.5     # Income sensitivity of money demand
-    h = 1200    # Interest sensitivity of money demand
+    h = 120    # Interest sensitivity of money demand
     
     # Exogenous Constants
     C0 = 200; I0 = 100; NX0 = 100; i_star = 0.05; P = 1; e_target = 1.0
@@ -85,9 +85,9 @@ def solve_mundell_fleming(G, T, M, regime, sigma):
         # 3. BP: NX + CF = 0         => -mY + sigma*i + xe = sigma*i_star - NX0
         
         A = np.array([
-            [1 - c1 + m,  b,  -x],
+            [1 - c1 + m,  b,  x],
             [k,          -h,   0],
-            [-m,      sigma,   x]
+            [-m,      sigma,   -x]
         ])
         B = np.array([
             C0 - c1*T + I0 + G + NX0,
